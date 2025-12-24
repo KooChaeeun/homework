@@ -1,0 +1,164 @@
+/* layout */
+.con-box {
+    width: 100%;
+}
+
+.inner {
+    width: 1400px;
+    margin: auto;
+    display: flex;
+}
+
+.inner > div {
+    width: 50%;
+}
+
+/* gallery - list area */
+.gallery .list-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .list-img article {
+    width: 400px;
+    height: 550px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 5px #dcdcdc;
+}
+
+/* buttons (common) */
+.gallery .list-img article .btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.gallery .list-img article .btn::before,
+.gallery .list-img article .btn::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: 0.5s;
+}
+
+.gallery .list-img article .btn span {
+    color: #000;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.gallery .list-img article .prev {
+    left: -60px;
+    text-align: left;
+}
+
+.gallery .list-img article .next {
+    right: -60px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.gallery .list-img article .prev::before {
+    transform-origin: left center;
+    transform: rotate(-180deg);
+}
+
+.gallery .list-img article .prev::after {
+    transform-origin: left center;
+    transform: rotate(180deg);
+}
+
+.gallery .list-img article .prev span {
+    transform: translateX(30%);
+}
+
+.gallery .list-img article .prev:hover::before {
+    transform: rotate(-30deg);
+}
+
+.gallery .list-img article .prev:hover::after {
+    transform: rotate(30deg);
+}
+
+.gallery .list-img article .prev:hover span {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.gallery .list-img article .next::before {
+    transform-origin: right center;
+    transform: rotate(180deg);
+}
+
+.gallery .list-img article .next::after {
+    transform-origin: right center;
+    transform: rotate(-180deg);
+}
+
+.gallery .list-img article .next span {
+    transform: translateX(50%);
+}
+
+.gallery .list-img article .next:hover::before {
+    transform: rotate(30deg);
+}
+
+.gallery .list-img article .next:hover::after {
+    transform: rotate(-30deg);
+}
+
+.gallery .list-img article .next:hover span {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+/* contents */
+.gallery .list-img article > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .list-img article strong {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.gallery .list-img article .txt {
+    width: 90%;
+    word-break: keep-all;
+    border: 1px solid #000;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* number */
+.gallery .list-img article .num {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+}
+
+/* big image  */
+.gallery .big-img img {
+}

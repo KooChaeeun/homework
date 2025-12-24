@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Doosan Main Banner</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <link href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css" rel="stylesheet" />
+        <style>
+            .doosan-slider {
+                padding: 80px 0;
+                overflow: hidden;
+            }
+            .inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            /* 상단 영역 레이아웃 */
+            .top-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 40px;
+            }
+            .top-content .desc {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                font-weight: 500;
+            }
+
+            /* 버튼 커스텀 */
+            .nav-buttons {
+                display: flex;
+                gap: 15px;
+            }
+            .nav-buttons div {
+                cursor: pointer;
+                font-size: 24px;
+                color: #333;
+                transition: 0.3s;
+            }
+            .nav-buttons div:hover {
+                color: #0054a6;
+            } /* 두산 블루 포인트 */
+
+            /* 슬라이드 아이템 */
+            .main-swiper {
+                overflow: visible;
+            } /* 옆 슬라이드가 살짝 보이게 */
+            .swiper-slide {
+                transition: 0.4s;
+            }
+            .swiper-slide .img-box {
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+                margin-bottom: 20px;
+            }
+            .swiper-slide .img-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .swiper-slide h3 {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
+            .swiper-slide p {
+                font-size: 0.95rem;
+                color: #666;
+                line-height: 1.5;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="doosan-slider">
+            <div class="inner">
+                <div class="top-content">
+                    <div class="desc">
+                        우리는 계속해서 핵심기술을 개발하고<br />
+                        근원적 경쟁력을 확보하는 데 매진할 것입니다.
+                    </div>
+                    <div class="nav-buttons">
+                        <div class="btn-prev"><i class="xi-arrow-left"></i></div>
+                        <div class="btn-next"><i class="xi-arrow-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="swiper main-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img-box"><img src="img1.jpg" alt="AI 기업으로 진화" /></div>
+                            <div class="info">
+                                <h3>AI 기업으로 진화</h3>
+                                <p>
+                                    약 50년간의 IT 비즈니스 경험과 노하우를 원동력으로 AI 시대에
+                                    새로운 도약
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img-box"><img src="img2.jpg" alt="기술과 혁신" /></div>
+                            <div class="info">
+                                <h3>기술과 혁신</h3>
+                                <p>최신 디지털 기술을 활용하여 선진화, 과학화된 업무 환경 제공</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper('.main-swiper', {
+                slidesPerView: 2, // 한 화면에 보여질 개수
+                spaceBetween: 30, // 슬라이드 사이 간격
+                loop: true, // 무한 반복
+
+                // 커스텀 버튼 연결
+                navigation: {
+                    nextEl: '.btn-next',
+                    prevEl: '.btn-prev',
+                },
+
+                // 반응형 설정
+                breakpoints: {
+                    320: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                },
+            });
+        </script>
+    </body>
+</html>
