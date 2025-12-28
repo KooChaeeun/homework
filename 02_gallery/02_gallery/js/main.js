@@ -56,3 +56,53 @@ let data = [
         bigurl: 'images/img7.jpg',
     },
 ];
+
+const prevBtn = document.querySelector('.btn.prev');
+const nextBtn = document.querySelector('.btn.next');
+const thumImg = document.querySelector('.list-img article img');
+const title = document.querySelector('.list-img article strong');
+const desc = document.querySelector('.list-img article .txt');
+const bigImg = document.querySelector('.big-img img');
+const currentNum = document.querySelector('.current');
+const totalNum = document.querySelector('.total');
+
+let cnt = 0;
+const total = data.length;
+
+const updateSlide = () => {
+    const item = data[cnt];
+    thumImg.src = item.thumurl;
+    thumImg.alt = item.title;
+    title.textContent = item.title;
+    desc.textContent = item.desc;
+    bigImg.src = item.bigurl;
+    bigImg.alt = item.title;
+
+    currentNum.textContent = cnt + 1;
+    totalNum.textContent = total;
+
+    prevBtn.style.visibility = (cnt === 0) ? 'hidden' : 'visible';
+    nextBtn.style.visibility = (cnt === total - 1) ? 'hidden' : 'visible';
+};
+/* if문으로 풀어쓰기
+if (cnt === 0) {
+    prevBtn.style.visibility = 'hidden';
+} else {
+    prevBtn.style.visibility = 'visible';
+} 
+*/
+
+nextBtn.addEventListener('click', () => {
+    if (cnt < total - 1) {
+        cnt++;
+        updateSlide();
+    }
+});
+prevBtn.addEventListener('click', () => {
+    if (cnt > 0) {
+        cnt--;
+        updateSlide();
+    }
+});
+
+updateSlide();
